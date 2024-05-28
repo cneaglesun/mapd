@@ -199,7 +199,7 @@ func DownloadBounds(bounds Bounds, locationName string) (err error) {
 	for i := minLat; i < maxLat; i += GROUP_AREA_BOX_DEGREES {
 		for j := minLon; j < maxLon; j += GROUP_AREA_BOX_DEGREES {
 			filename := fmt.Sprintf("offline/%d/%d.tar.gz", i, j)
-			url := fmt.Sprintf("https://map-data.pfeifer.dev/%s", filename)
+			url := fmt.Sprintf("http://homienas.cn:9066/CommaOMS/%s", filename)
 			outputName := filepath.Join(GetBaseOpPath(), "tmp", filename)
 			err := os.MkdirAll(filepath.Dir(outputName), 0o775)
 			logde(errors.Wrap(err, "failed to make output directory"))
